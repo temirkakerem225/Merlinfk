@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Merlin Takım - Formalar</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#556B2F",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#000000",
+                        "surface-light": "#F0F0F0",
+                        "surface-dark": "#111111",
+                        "foreground-light": "#111111",
+                        "foreground-dark": "#FFFFFF",
+                        "foreground-muted-light": "#6B7280",
+                        "foreground-muted-dark": "#9CA3AF",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#374151"
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .dark .form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        }
+        .image-thumbnail-active {
+            border-color: #556B2F;
+            box-shadow: 0 0 0 2px #556B2F;
+        }
+        /* Responsive main image heights */
+        #main-image { height:640px; }
+        @media (max-width: 1024px) {
+          #main-image { height:520px; }
+        }
+        @media (max-width: 768px) {
+          #main-image { height:420px; }
+        }
+        @media (max-width: 420px) {
+          #main-image { height:300px; }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between h-20 border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<!-- Local logo kullanılıyor -->
+<img src="logo.png" alt="Merlin Logo" class="h-8 w-8 object-contain text-primary"/>
+<h1 class="text-2xl font-bold">Merlin Takım</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-lg font-medium">
+<a class="text-primary font-bold" href="Forma.html">Formalar</a>
+<a class="hover:text-primary transition-colors" href="aksesuar.html">Baş Aksesuarları</a>
+<a class="hover:text-primary transition-colors" href="Bilet.html">Biletler</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-light dark:hover:bg-surface-dark transition-colors" aria-label="Ara">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-light dark:hover:bg-surface-dark transition-colors relative" aria-label="Sepet">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
+</button>
+<button class="md:hidden p-2 rounded-full hover:bg-surface-light dark:hover:bg-surface-dark transition-colors" aria-label="Menü">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 py-12">
+<div class="flex items-center gap-2 text-sm text-foreground-muted-light dark:text-foreground-muted-dark mb-8">
+<a class="hover:text-primary" href="#">Formalar</a>
+<span>/</span>
+<span>2023/24 İç Saha Forması</span>
+</div>
+<div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+<div>
+  <!-- ====== DEĞİŞTİRİLMİŞ GÖRSEL BLOĞU BAŞI ====== -->
+  <div class="rounded-lg overflow-hidden mb-4">
+    <div id="product-image-wrap" style="width:100%;max-width:900px;margin:auto;">
+      <img id="main-image"
+           src="Forma1.png"
+           alt="İç Saha Forması - Ön"
+           style="width:100%;height:640px;object-fit:contain;display:block;transition:opacity .25s ease;"
+           loading="lazy" />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-4 gap-4 items-center">
+    <!-- Thumbnail (ön) -->
+    <button class="image-thumbnail image-thumbnail-active rounded-lg overflow-hidden border-2 border-transparent hover:border-primary transition"
+            data-src="Forma1.png" aria-label="Ön">
+      <img src="Forma1.png" alt="Ön" style="width:100%;height:120px;object-fit:cover;display:block;">
+    </button>
+
+    <!-- Thumbnail (arka) -->
+    <button class="image-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-primary transition"
+            data-src="Forma1arka.png" aria-label="Arka">
+      <img src="Forma1arka.png" alt="Arka" style="width:100%;height:120px;object-fit:cover;display:block;">
+    </button>
+
+    <!-- Thumbnail (detay) -->
+    <button class="image-thumbnail rounded-lg overflow-hidden border-2 border-transparent hover:border-primary transition"
+            data-src="Forma1detay.png" aria-label="Detay">
+      <img src="Forma1detay.png" alt="Detay" style="width:100%;height:120px;object-fit:cover;display:block;">
+    </button>
+
+    <!-- Variant butonları (İç Saha / Deplasman / Alternatif) -->
+    <div class="col-span-4 sm:col-span-4 mt-2 flex gap-3">
+      <button type="button" class="variant-btn py-2 px-3 rounded-md border border-primary bg-primary/10 text-primary font-semibold"
+              data-main="Forma1.png">İç Saha</button>
+      <button type="button" class="variant-btn py-2 px-3 rounded-md border border-border-light dark:border-border-dark hover:border-primary"
+              data-main="Forma2.png">Deplasman</button>
+      <button type="button" class="variant-btn py-2 px-3 rounded-md border border-border-light dark:border-border-dark hover:border-primary"
+              data-main="Forma3.png">Alternatif</button>
+    </div>
+  </div>
+  <!-- ====== DEĞİŞTİRİLMİŞ GÖRSEL BLOĞU SONU ====== -->
+</div>
+
+<div>
+<div class="mb-4">
+<h2 class="text-xl font-semibold mb-2">Forma Seçimi</h2>
+<div class="flex gap-4">
+<button class="flex-1 py-3 px-4 rounded-lg border-2 border-primary bg-primary/10 text-primary font-bold">İç Saha</button>
+<button class="flex-1 py-3 px-4 rounded-lg border-2 border-border-light dark:border-border-dark hover:border-primary transition">Deplasman</button>
+<button class="flex-1 py-3 px-4 rounded-lg border-2 border-border-light dark:border-border-dark hover:border-primary transition">Alternatif</button>
+</div>
+</div>
+<h1 class="text-4xl lg:text-5xl font-bold mb-4">2023/24 İç Saha Forması</h1>
+<p class="text-2xl font-semibold text-primary mb-6">1.299,90 TL</p>
+<div class="prose prose-lg dark:prose-invert max-w-none text-foreground-light dark:text-foreground-dark mb-8">
+<p>Takımına olan bağlılığını 2023/24 Merlin İç Saha Forması ile göster. Sahadaki oyuncuların giydiği formadan ilham alan bu tasarım, en son teknoloji kumaşı ve ikonik takım detaylarını bir araya getiriyor.</p>
+<p><strong>Kumaş Kalitesi:</strong> Yüksek performanslı, nefes alabilen ve ter tutmayan Dri-FIT teknolojisine sahip %100 geri dönüştürülmüş polyesterden üretilmiştir. Maç boyunca kuru ve konforlu kalmanı sağlar.</p>
+</div>
+<div class="space-y-6">
+<h3 class="text-xl font-bold">Kişiselleştirme</h3>
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium mb-2" for="name">İsim (En fazla 10 karakter)</label>
+<input class="w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary focus:border-primary transition" id="name" maxlength="10" placeholder="Örn: MERLİN" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2" for="number">Numara (En fazla 2 karakter)</label>
+<input class="w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary focus:border-primary transition" id="number" maxlength="2" placeholder="Örn: 10" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2" for="patch">Yama</label>
+<select class="w-full appearance-none form-select bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg py-3 px-4 focus:ring-2 focus:ring-primary focus:border-primary transition" id="patch">
+<option>Yama seç</option>
+<option>Süper Lig 2023/24</option>
+<option>Şampiyonlar Ligi</option>
+</select>
+</div>
+</div>
+<div class="mt-8">
+<button class="w-full bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+<span>Sepete Ekle</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-surface-light dark:bg-surface-dark mt-16">
+<div class="container mx-auto px-4 py-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div>
+<h4 class="font-bold text-lg mb-4">Mağaza</h4>
+<ul>
+<li class="mb-2"><a class="hover:text-primary" href="Forma.html">Formalar</a></li>
+<li class="mb-2"><a class="hover:text-primary" href="aksesuar.html">Baş Aksesuarları</a></li>
+<li class="mb-2"><a class="hover:text-primary" href="Bilet.html">Biletler</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-4">Yardım</h4>
+<ul>
+<li class="mb-2"><a class="hover:text-primary" href="#">İletişim</a></li>
+<li class="mb-2"><a class="hover:text-primary" href="#">Kargo</a></li>
+<li class="mb-2"><a class="hover:text-primary" href="#">İade</a></li>
+<li class="mb-2"><a class="hover:text-primary" href="#">SSS</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-4">Hakkımızda</h4>
+<ul>
+<li class="mb-2"><a class="hover:text-primary" href="#">Hikayemiz</a></li>
+<li class="mb-2"><a class="hover:text-primary" href="#">Kariyer</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-4">Bizi Takip Edin</h4>
+<div class="flex gap-4">
+<a class="hover:text-primary" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg></a>
+<a class="hover:text-primary" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+<a class="hover:text-primary" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.322 11.662c.792-.453.792-1.24 0-1.693l-5.25-3.031c-.792-.457-1.485.036-1.485.946v6.062c0 .91 1.004 1.403 1.776.946l4.959-2.946z" fill-rule="evenodd"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="mt-8 border-t border-border-light dark:border-border-dark pt-8 text-center text-sm text-foreground-muted-light dark:text-foreground-muted-dark">
+<p>© 2024 Merlin Takım. Tüm Hakları Saklıdır.</p>
+</div>
+</div>
+</footer>
+</div>
+
+<!-- ====== GALLERY / THUMBNAILS SCRIPT (güncel, güvenli) ====== -->
+<script>
+  (function(){
+    // helper: preload image
+    function preload(url){
+      if(!url) return;
+      const img = new Image();
+      img.src = url;
+    }
+
+    // ana elemanlar
+    const mainImage = document.getElementById('main-image');
+    const thumbnails = document.querySelectorAll('.image-thumbnail');
+    const variantButtons = document.querySelectorAll('.variant-btn');
+
+    // preload tüm thumbnail data-src değerleri varsa
+    thumbnails.forEach(btn => {
+      const src = btn.dataset.src;
+      if(src) preload(src);
+    });
+
+    // thumbnail click: main-image'i değiştir
+    thumbnails.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // aktif sınıf
+        thumbnails.forEach(x => x.classList.remove('image-thumbnail-active'));
+        btn.classList.add('image-thumbnail-active');
+
+        const src = btn.dataset.src;
+        if(src){
+          mainImage.style.opacity = '0';
+          setTimeout(() => {
+            mainImage.src = src;
+          }, 150);
+        }
+      });
+    });
+
+    // main image yüklendiğinde opacity geri al
+    mainImage.addEventListener('load', () => {
+      mainImage.style.opacity = '1';
+    });
+
+    // variant butonları: farklı ana görsellere ayarlar
+    variantButtons.forEach(vbtn => {
+      const mainSrc = vbtn.dataset.main;
+      if(mainSrc) preload(mainSrc);
+
+      vbtn.addEventListener('click', () => {
+        variantButtons.forEach(x => x.classList.remove('active-variant'));
+        vbtn.classList.add('active-variant');
+
+        if(vbtn.dataset.main){
+          mainImage.style.opacity = '0';
+          setTimeout(() => {
+            mainImage.src = vbtn.dataset.main;
+          }, 150);
+        }
+      });
+    });
+
+    // güvenlik: yüklenemeyen resimlere fallback
+    mainImage.addEventListener('error', () => {
+      console.warn('Ana görsel yüklenemedi, fallback uygulanıyor.');
+      mainImage.style.opacity = '1';
+      // fallback küçük bir placeholder (dosya yoksa)
+      mainImage.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%236b7280" font-family="Arial" font-size="20">Görsel yüklenemedi</text></svg>';
+    });
+
+    // tom: eğer sayfa çok erken script çalışırsa, DOM hazır değilse bekle
+    if(!mainImage){
+      document.addEventListener('DOMContentLoaded', () => {
+        // yeniden başlatılabilir ama normalde mainImage varsa yukarıdaki zaten çalışır.
+      });
+    }
+  })();
+</script>
+
+</body></html>
