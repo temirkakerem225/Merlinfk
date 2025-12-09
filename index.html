@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<title>Merlin Takım Mağazası</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&amp;display=swap" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#556B2F",
+            "background-light": "#FFFFFF",
+            "background-dark": "#000000",
+            "text-light": "#000000",
+            "text-dark": "#FFFFFF"
+          },
+          fontFamily: {
+            "display": ["Montserrat", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 items-center justify-between border-b border-primary/20 dark:border-primary/30">
+<div class="flex items-center gap-4">
+  <div class="flex items-center justify-center">
+    <img src="logo.png" alt="Merlin Logo" class="h-10 w-10 object-contain" />
+  </div>
+<h2 class="text-lg font-bold text-text-light dark:text-text-dark">Merlin Takım Mağazası</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="Forma.html">Formalar</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="Bilet.html">Biletler</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="aksesuar.html">Baş Aksesuarları</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="Galeri.html">Galeri</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center rounded-full h-10 w-10 hover:bg-primary/20 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 hover:bg-primary/20 transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative h-[70vh] min-h-[500px] md:h-screen md:min-h-[700px] bg-background-dark text-white">
+<div class="absolute inset-0 bg-black/50 z-10"></div>
+<div class="absolute inset-0 h-full w-full">
+<div class="grid grid-cols-3 h-full">
+<div class="h-full bg-cover bg-center" style='background-image: url("Forma1.png");'></div>
+<div class="h-full bg-cover bg-center" style='background-image: url("Forma2.png");'></div>
+<div class="h-full bg-cover bg-center" style='background-image: url("Forma3.png");'></div>
+</div>
+</div>
+<div class="relative z-20 flex h-full flex-col items-center justify-center text-center px-4">
+<h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white">ZAFER İÇİN GİY!</h1>
+<p class="mt-2 text-lg md:text-xl font-semibold text-white">2024/25 SEZONU FORMALARI SATIŞTA</p>
+<a class="mt-8 inline-block rounded-lg bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105" href="Forma.html">Hemen Forma Al</a>
+</div>
+</section>
+<section class="py-16 sm:py-24 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<a class="group relative block overflow-hidden rounded-lg col-span-1 lg:col-span-1" href="Forma.html">
+<div class="absolute inset-0 bg-black/40 z-10"></div>
+<div class="relative flex h-80 items-end justify-start p-6 z-20">
+<h3 class="text-2xl font-bold text-white">Formalar</h3>
+</div>
+<div class="absolute inset-0 grid grid-cols-3 h-full w-full">
+<div class="col-span-1 h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("Forma1.png");'></div>
+<div class="col-span-1 h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("Forma2.png");'></div>
+<div class="col-span-1 h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("Forma3.png");'></div>
+</div>
+</a>
+<a class="group relative block overflow-hidden rounded-lg" href="Bilet.html">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-110" style='background-image: url("Bilet.png");'></div>
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="relative flex h-80 items-end justify-start p-6">
+<h3 class="text-2xl font-bold text-white">Biletler</h3>
+</div>
+</a>
+<a class="group relative block overflow-hidden rounded-lg" href="aksesuar.html">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-110" style='background-image: url("Aksesuar.png");'></div>
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="relative flex h-80 items-end justify-start p-6">
+<h3 class="text-2xl font-bold text-white">Baş Aksesuarları</h3>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section class="bg-background-light dark:bg-background-dark py-16 sm:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+<div class="text-center lg:text-left">
+<h2 class="text-3xl font-bold tracking-tight text-text-light dark:text-text-dark sm:text-4xl">DEPLASMAN RUHU</h2>
+<p class="mt-4 text-xl font-semibold text-primary">MERLİN HAKİ KOLEKSİYONU</p>
+<a class="mt-8 inline-block rounded-lg bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105" href="aksesuar.html">Koleksiyonu İncele</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="overflow-hidden rounded-lg">
+<img alt="Haki Deplasman Forması" class="h-full w-full object-cover" src="Umut.jpeg"/>
+</div>
+<div class="overflow-hidden rounded-lg">
+<img alt="Haki Bere" class="h-full w-full object-cover" src="Bere.png"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="relative bg-cover bg-center py-24 sm:py-32">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("Bilet.png");'></div>
+<div class="absolute inset-0 bg-background-dark/70"></div>
+<div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">TRİBÜNDEKİ YERİNİ AL</h2>
+<p class="mt-4 text-lg">BİR SONRAKİ MAÇ BİLETLERİ VE KOMBİNELER</p>
+<div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+<a class="inline-block rounded-lg border-2 border-primary bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105" href="Bilet.html">Maç Biletleri</a>
+<a class="inline-block rounded-lg border-2 border-white px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-white hover:text-background-dark" href="Bilet.html">Kombine Al</a>
+</div>
+</div>
+</section>
+<section class="bg-background-light dark:bg-background-dark py-16 sm:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+<div class="relative h-96 overflow-hidden rounded-lg">
+<div class="relative h-96 overflow-hidden rounded-lg">
+    <img src="anakadro.jpeg" class="absolute inset-0 h-full w-full object-cover" alt="Ana Kadro">
+</div>
+</div>
+<div class="text-center lg:text-left">
+<h2 class="text-3xl font-bold tracking-tight text-text-light dark:text-text-dark sm:text-4xl">BİZ BİRLİKTE MERLİN TAKIMIZ</h2>
+<a class="mt-6 inline-block text-primary font-bold group" href="Galeri.html">
+                    Takım Fotoğrafları ve Galeri
+                    <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">→</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-dark text-gray-400">
+<div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div>
+<h3 class="text-sm font-semibold uppercase tracking-wider text-white">Mağaza</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-base text-gray-400 hover:text-white" href="Forma.html">Formalar</a></li>
+<li><a class="text-base text-gray-400 hover:text-white" href="aksesuar.html">Baş Aksesuarları</a></li>
+<li><a class="text-base text-gray-400 hover:text-white" href="aksesuar.html">Yeni Gelenler</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-semibold uppercase tracking-wider text-white">Kulüp</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-base text-gray-400 hover:text-white" href="Bilet.html">Biletler</a></li>
+<li><a class="text-base text-gray-400 hover:text-white" href="Galeri.html">Galeri</a></li>
+<li><a class="text-base text-gray-400 hover:text-white" href="Galeri.html">Haberler</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-semibold uppercase tracking-wider text-white">Destek</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-base text-gray-400 hover:text-white" href="#">İletişim</a></li>
+<li><a class="text-base text-gray-400 hover:text-white" href="#">SSS</a></li>
+<li><a class="text-base text-gray-400 hover:text-white" href="#">Teslimat</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-semibold uppercase tracking-wider text-white">Bizi Takip Edin</h3>
+</div>
+</div>
+<div class="mt-12 border-t border-primary/30 pt-8 text-center text-sm">
+<p>© 2024 Merlin Takım Mağazası. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
