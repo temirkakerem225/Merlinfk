@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Merlin Takım - Bilet Seçimi</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<style>
+      /* Radyo butonu işaretlendiğinde içindeki dolguyu aktif eden stil */
+      .custom-radio:checked {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23556B2F' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='4'/%3e%3c/circle%3e%3c/svg%3e");
+      }
+      /* Görünmez radyo butonu için peer sınıfı ile seçim efekti */
+      .peer:checked + div {
+        border-color: #556B2F; /* primary rengi */
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 0 0 2px #556B2F; /* ring-2 ring-primary'ye benzer gölge */
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#556B2F",
+              "background-light": "#ffffff",
+              "background-dark": "#1a1a1a",
+              "text-dark": "#1a1a1a",
+              "text-light": "#ffffff",
+            },
+            fontFamily: {
+              display: ["Montserrat", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-dark dark:text-text-light">
+<div class="flex min-h-screen flex-col">
+<header class="border-b border-primary/20 dark:border-primary/30">
+<div class="container mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+<div class="flex items-center gap-3">
+<img src="logo.png" alt="Merlin Logo" class="h-8 w-8 object-contain text-primary"/>
+<h1 class="text-xl font-bold text-text-dark dark:text-text-light">Merlin Takım</h1>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="index.html">Ana Sayfa</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="Galeri.html">Galeri</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="Forma.html">Formalar</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="aksesuar.html">Baş Aksesuarları</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="rounded-full p-2 text-gray-600 transition-all hover:bg-gray-100 hover:text-primary active:scale-95 dark:text-gray-300 dark:hover:bg-primary/30 dark:hover:text-text-light">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</button>
+
+<div class="relative group">
+  <button class="relative rounded-full p-2 text-gray-600 transition-all hover:bg-gray-100 hover:text-primary active:scale-95 dark:text-gray-300 dark:hover:bg-primary/30 dark:hover:text-text-light">
+    <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+      <path d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"></path>
+    </svg>
+    <span id="cart-count-badge" class="absolute -right-1 -top-1 h-5 w-5 rounded-full bg-red-500 text-xs font-bold text-white flex items-center justify-center pointer-events-none transition-opacity duration-300 opacity-0 scale-0">0</span>
+  </button>
+  <div id="cart-dropdown" class="absolute right-0 mt-2 w-72 rounded-lg bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 z-10 dark:bg-background-dark border border-gray-200 dark:border-gray-700">
+    <div class="p-4">
+      <p class="font-bold text-lg mb-2 border-b pb-2 text-text-dark dark:text-text-light dark:border-gray-700">Sepetiniz (<span id="dropdown-item-count">0</span> Ürün)</p>
+      <div id="cart-items-container">
+        <p class="text-sm text-gray-500 dark:text-gray-400">Sepetiniz boş.</p>
+      </div>
+      <div class="pt-3 flex justify-between items-center border-t border-gray-200 dark:border-gray-700 mt-2">
+        <p class="font-bold text-text-dark dark:text-text-light">Toplam:</p>
+        <p id="cart-total-price" class="font-bold text-primary">0 TL</p>
+      </div>
+      <a href="#" class="mt-4 block w-full text-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/80">
+        Sepete Git
+      </a>
+    </div>
+  </div>
+</div>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("Serhat.jpeg");'></div>
+</div>
+</div>
+</header>
+<main class="container mx-auto flex-grow px-4 py-8 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-4xl">
+<div class="mb-12 text-center">
+<h2 class="text-4xl font-bold tracking-tight text-text-dark dark:text-text-light sm:text-5xl">Maçınızı Seçin</h2>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+              Aşağıdaki listeden istediğiniz maçı seçin ve koltuk seçimine devam edin.
+            </p>
+</div>
+<div class="space-y-10">
+<section>
+<h3 class="mb-4 text-2xl font-bold text-text-dark dark:text-text-light">Gelecek Maçlar</h3>
+<div class="space-y-4">
+
+<label class="block cursor-pointer">
+    <input type="radio" name="selected-match" value="Merlin Takım vs. Ejderhalar" data-price="500" class="hidden peer" checked>
+    <div class="flex items-center gap-4 rounded-lg bg-white p-4 shadow-sm ring-2 ring-transparent transition-all hover:bg-gray-50 hover:ring-2 hover:ring-primary/50 active:scale-[0.98] peer-checked:ring-primary peer-checked:bg-white peer-checked:shadow-lg dark:bg-background-dark/80 dark:hover:bg-background-dark dark:hover:ring-primary/50 dark:peer-checked:bg-background-dark">
+        <div class="h-16 w-16 flex-shrink-0 rounded-lg bg-cover bg-center" style='background-image: url("Kerem.jpeg");'></div>
+        <div class="flex-grow">
+            <p class="font-bold text-text-dark dark:text-text-light">Merlin Takım vs. Ejderhalar</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">18 Kasım 2023 Cumartesi, 15:00</p>
+        </div>
+    </div>
+</label>
+
+<label class="block cursor-pointer">
+    <input type="radio" name="selected-match" value="Merlin Takım vs. Titanlar" data-price="500" class="hidden peer">
+    <div class="flex items-center gap-4 rounded-lg bg-white p-4 shadow-sm ring-2 ring-transparent transition-all hover:bg-gray-50 hover:ring-2 hover:ring-primary/50 active:scale-[0.98] peer-checked:ring-primary peer-checked:bg-white peer-checked:shadow-lg dark:bg-background-dark/80 dark:hover:bg-background-dark dark:hover:ring-primary/50 dark:peer-checked:bg-background-dark">
+        <div class="h-16 w-16 flex-shrink-0 rounded-lg bg-cover bg-center" style='background-image: url("mac2.jpeg");'></div>
+        <div class="flex-grow">
+            <p class="font-bold text-text-dark dark:text-text-light">Merlin Takım vs. Titanlar</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">26 Kasım 2023 Pazar, 17:30</p>
+        </div>
+    </div>
+</label>
+
+<label class="block cursor-pointer">
+    <input type="radio" name="selected-match" value="Merlin Takım vs. Savaşçılar" data-price="500" class="hidden peer">
+    <div class="flex items-center gap-4 rounded-lg bg-white p-4 shadow-sm ring-2 ring-transparent transition-all hover:bg-gray-50 hover:ring-2 hover:ring-primary/50 active:scale-[0.98] peer-checked:ring-primary peer-checked:bg-white peer-checked:shadow-lg dark:bg-background-dark/80 dark:hover:bg-background-dark dark:hover:ring-primary/50 dark:peer-checked:bg-background-dark">
+        <div class="h-16 w-16 flex-shrink-0 rounded-lg bg-cover bg-center" style='background-image: url("mac1.jpeg");'></div>
+        <div class="flex-grow">
+            <p class="font-bold text-text-dark dark:text-text-light">Merlin Takım vs. Savaşçılar</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">2 Aralık 2023 Cumartesi, 14:00</p>
+        </div>
+    </div>
+</label>
+</div>
+</section>
+<section>
+<h3 class="mb-4 text-2xl font-bold text-text-dark dark:text-text-light">Stadyum Haritası</h3>
+<div class="aspect-video w-full cursor-pointer rounded-xl bg-cover bg-center shadow-lg transition-transform hover:scale-[1.01] active:scale-[0.99]" style='background-image: url("harıta.png");'></div>
+<p class="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">Koltuk seçimi için etkileşimli harita.</p>
+</section>
+<section>
+<h3 class="mb-4 text-2xl font-bold text-text-dark dark:text-text-light">Bilet Seçenekleri</h3>
+<div class="grid gap-4 sm:grid-cols-2">
+<label class="flex cursor-pointer items-start gap-4 rounded-lg border-2 border-gray-200 bg-white p-4 transition-all hover:border-primary/50 active:scale-[0.98] has-[:checked]:border-primary dark:border-gray-700 dark:bg-background-dark/80 dark:hover:border-primary/50 dark:has-[:checked]:border-primary">
+<input checked="" class="custom-radio mt-1 h-5 w-5 flex-shrink-0 appearance-none rounded-full border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:border-gray-600 dark:bg-background-dark" name="ticket-option" type="radio" value="Tek Maç Bileti" data-price="500"/>
+<div class="flex-grow">
+<p class="font-bold text-text-dark dark:text-text-light">Tek Maç Bileti</p>
+<p class="text-sm text-gray-600 dark:text-gray-300">Seçilen bir maça giriş hakkı.</p>
+</div>
+</label>
+<label class="flex cursor-pointer items-start gap-4 rounded-lg border-2 border-gray-200 bg-white p-4 transition-all hover:border-primary/50 active:scale-[0.98] has-[:checked]:border-primary dark:border-gray-700 dark:bg-background-dark/80 dark:hover:border-primary/50 dark:has-[:checked]:border-primary">
+<input class="custom-radio mt-1 h-5 w-5 flex-shrink-0 appearance-none rounded-full border-2 border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:border-gray-600 dark:bg-background-dark" name="ticket-option" type="radio" value="Kombine Bilet" data-price="4000"/>
+<div class="flex-grow">
+<p class="font-bold text-text-dark dark:text-text-light">Kombine</p>
+<p class="text-sm text-primary">(%20 Tasarruf Edin)</p>
+</div>
+</label>
+</div>
+</section>
+<section>
+<h3 class="mb-4 text-2xl font-bold text-text-dark dark:text-text-light">Fiyat Karşılaştırması</h3>
+<div class="overflow-hidden rounded-lg border border-gray-200 shadow-sm dark:border-gray-700">
+<div class="divide-y divide-gray-200 dark:divide-gray-700">
+<div class="grid grid-cols-3 items-center gap-4 bg-gray-50 px-4 py-3 dark:bg-background-dark/50">
+<p class="col-span-2 text-sm font-medium text-gray-600 dark:text-gray-300">Bilet Türü</p>
+<p class="text-right text-sm font-medium text-gray-600 dark:text-gray-300">Fiyat</p>
+</div>
+<div class="grid grid-cols-3 items-center gap-4 bg-white px-4 py-4 dark:bg-background-dark">
+<p class="col-span-2 font-medium text-text-dark dark:text-text-light">Tek Maç Bileti</p>
+<p class="text-right font-semibold text-text-dark dark:text-text-light">500 TL</p>
+</div>
+<div class="grid grid-cols-3 items-center gap-4 bg-white px-4 py-4 dark:bg-background-dark">
+<div class="col-span-2">
+<p class="font-medium text-text-dark dark:text-text-light">Kombine</p>
+<p class="text-sm text-primary">(%20 Tasarruf Edin)</p>
+</div>
+<p class="text-right font-semibold text-text-dark dark:text-text-light">4000 TL</p>
+</div>
+</div>
+</div>
+</section>
+<div class="flex justify-center pt-6">
+<button id="add-to-cart-button" class="flex items-center justify-center rounded-lg bg-primary px-10 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-primary/50">
+                Sepete Ekle
+              </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+<script>
+    // Basit bir sepet (cart) state'i. Ürünler bu diziye eklenecek.
+    let cart = [];
+
+    // Fiyatları TL formatına çeviren yardımcı fonksiyon
+    function formatTL(amount) {
+        return amount.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY', minimumFractionDigits: 0 });
+    }
+
+    // Sepeti güncelleyen ana fonksiyon
+    function updateCartDisplay() {
+        const cartCountBadge = document.getElementById('cart-count-badge');
+        const dropdownItemCount = document.getElementById('dropdown-item-count');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+
+        const totalItems = cart.length;
+        const totalAmount = cart.reduce((sum, item) => sum + item.price, 0);
+
+        // Sayacı güncelle
+        cartCountBadge.textContent = totalItems;
+        dropdownItemCount.textContent = totalItems;
+        
+        // Sayacı göster/gizle
+        if (totalItems > 0) {
+            cartCountBadge.classList.remove('opacity-0', 'scale-0');
+            cartCountBadge.classList.add('opacity-100', 'scale-100');
+        } else {
+            cartCountBadge.classList.remove('opacity-100', 'scale-100');
+            cartCountBadge.classList.add('opacity-0', 'scale-0');
+        }
+
+        // Sepet toplamını güncelle
+        cartTotalPrice.textContent = formatTL(totalAmount);
+
+        // Sepet içeriklerini güncelle
+        cartItemsContainer.innerHTML = '';
+        if (totalItems === 0) {
+            cartItemsContainer.innerHTML = '<p class="text-sm text-gray-500 dark:text-gray-400">Sepetiniz boş.</p>';
+        } else {
+            // Ürünleri listele
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'flex items-center justify-between py-2 border-b last:border-b-0 dark:border-gray-800';
+                itemDiv.innerHTML = `
+                    <p class="text-sm">${item.name} (${item.type})</p>
+                    <p class="font-semibold text-sm">${formatTL(item.price)}</p>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+        }
+    }
+
+    // Seçilen ürünü sepete ekleme fonksiyonu
+    document.getElementById('add-to-cart-button').addEventListener('click', function(e) {
+        e.preventDefault(); // Varsayılan formu göndermeyi engelle
+
+        // 1. Seçilen Maçı Bul
+        const selectedMatchRadio = document.querySelector('input[name="selected-match"]:checked');
+        const matchName = selectedMatchRadio ? selectedMatchRadio.value : 'Bilinmeyen Maç';
+        
+        // 2. Seçilen Bilet Seçeneğini Bul
+        const selectedTicketRadio = document.querySelector('input[name="ticket-option"]:checked');
+        const ticketType = selectedTicketRadio ? selectedTicketRadio.value : 'Bilinmeyen Bilet Tipi';
+        const ticketPrice = selectedTicketRadio ? parseInt(selectedTicketRadio.dataset.price) : 0;
+
+        if (ticketPrice > 0) {
+            const newItem = {
+                id: Date.now(), // Benzersiz ID
+                name: matchName,
+                type: ticketType,
+                price: ticketPrice
+            };
+            
+            // Yeni ürünü mevcut sepete ekle
+            cart.push(newItem);
+            updateCartDisplay();
+            
+            // Kullanıcıya geri bildirim ver
+            alert(`${matchName} için ${ticketType} (${formatTL(ticketPrice)}) sepete başarıyla eklendi! Sepetinizde toplam ${cart.length} ürün var.`);
+
+        } else {
+            alert('Lütfen geçerli bir bilet seçeneği seçin.');
+        }
+    });
+
+    // Sayfa yüklendiğinde sepeti ilk kez göster (Başlangıçta boş)
+    document.addEventListener('DOMContentLoaded', updateCartDisplay);
+</script>
+</body></html>
